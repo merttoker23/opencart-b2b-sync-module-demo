@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "sku": "B2B-DEMO-001",
+      "name": "B2B Demo Product",
+      "price": 29.9,
+      "stock": 75,
+      "active": true
+    },
+    {
+      "sku": "B2B-DEMO-002",
+      "name": "B2B Demo Accessory",
+      "price": 9.9,
+      "stock": 200,
+      "active": true
+    }
+  ]
+}
