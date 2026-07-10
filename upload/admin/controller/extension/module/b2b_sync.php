@@ -30,6 +30,16 @@ class ControllerExtensionModuleB2BSync extends Controller
 
     public function sync(): void
     {
+        if (!$this->user->hasPermission('modify', 'extension/module/b2b_sync')) {
+            $this->response->addHeader('HTTP/1.1 403 Forbidden');
+            $this->response->addHeader('Content-Type: application/json');
+            $this->response->setOutput(json_encode([
+                'success' => false,
+                'error' => 'Permission denied.',
+            ]));
+            return;
+        }
+
         $this->load->model('extension/module/b2b_sync');
         $result = $this->model_extension_module_b2b_sync->syncProducts();
 
